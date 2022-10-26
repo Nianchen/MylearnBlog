@@ -1,4 +1,4 @@
-## 我的一些学习发面的笔记-----持续更新！
+## Nianchen的小白之路-----持续更新！
 
 这里这里-----[MyBlog](https://nianchen.github.io/MylearnBlog/)-----链接在这里
 
