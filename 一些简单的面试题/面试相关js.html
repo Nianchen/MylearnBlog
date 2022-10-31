@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>call bind apply | Nianchen的小白之路</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="Nianchen的小白之路">
+    
+    <link rel="preload" href="/MylearnBlog/assets/css/0.styles.3aa324af.css" as="style"><link rel="preload" href="/MylearnBlog/assets/js/app.1629bc63.js" as="script"><link rel="preload" href="/MylearnBlog/assets/js/2.f721d287.js" as="script"><link rel="preload" href="/MylearnBlog/assets/js/14.a152939e.js" as="script"><link rel="prefetch" href="/MylearnBlog/assets/js/10.638d50af.js"><link rel="prefetch" href="/MylearnBlog/assets/js/11.2f4213cd.js"><link rel="prefetch" href="/MylearnBlog/assets/js/12.04c9b8fe.js"><link rel="prefetch" href="/MylearnBlog/assets/js/13.065f31cf.js"><link rel="prefetch" href="/MylearnBlog/assets/js/15.24829d07.js"><link rel="prefetch" href="/MylearnBlog/assets/js/16.711948a7.js"><link rel="prefetch" href="/MylearnBlog/assets/js/17.f5c47d99.js"><link rel="prefetch" href="/MylearnBlog/assets/js/3.319c8c5f.js"><link rel="prefetch" href="/MylearnBlog/assets/js/4.46cf3844.js"><link rel="prefetch" href="/MylearnBlog/assets/js/5.bd172b1f.js"><link rel="prefetch" href="/MylearnBlog/assets/js/6.893e9c92.js"><link rel="prefetch" href="/MylearnBlog/assets/js/7.4e92160d.js"><link rel="prefetch" href="/MylearnBlog/assets/js/8.63f4b368.js"><link rel="prefetch" href="/MylearnBlog/assets/js/9.bec42934.js">
+    <link rel="stylesheet" href="/MylearnBlog/assets/css/0.styles.3aa324af.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/MylearnBlog/" class="home-link router-link-active"><!----> <span class="site-name">Nianchen的小白之路</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/MylearnBlog/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="MyGithub" class="dropdown-title"><span class="title">MyGithub</span> <span class="arrow down"></span></button> <button type="button" aria-label="MyGithub" class="mobile-dropdown-title"><span class="title">MyGithub</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/Nianchen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/MylearnBlog/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="MyGithub" class="dropdown-title"><span class="title">MyGithub</span> <span class="arrow down"></span></button> <button type="button" aria-label="MyGithub" class="mobile-dropdown-title"><span class="title">MyGithub</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/Nianchen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>入门知识系列</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/MylearnBlog/browser/browser.html" class="sidebar-link">浏览器原理</a></li><li><a href="/MylearnBlog/javascript/Javascript.html" class="sidebar-link">JavaScript入门</a></li><li><a href="/MylearnBlog/ES6入门/ES6.html" class="sidebar-link">ES6入门</a></li><li><a href="/MylearnBlog/深入系列/深入系列.html" class="sidebar-link">JavaScript深入系列</a></li><li><a href="/MylearnBlog/Vue2/Vue2.html" class="sidebar-link">Vue2</a></li><li><a href="/MylearnBlog/Typescript/Typescript.html" class="sidebar-link">Typescript入门</a></li><li><a href="/MylearnBlog/javascript/正则表达式.html" class="sidebar-link">正则表达式</a></li><li><a href="/MylearnBlog/计算机网络入门/计算机网络.html" class="sidebar-link">计算机网络入门</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>一些简单的面试题</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/MylearnBlog/一些简单的面试题/面试相关js.html" class="active sidebar-link">一些简单的面试题</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#call-bind-apply" class="sidebar-link">call bind apply</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#快速居中对齐" class="sidebar-link">快速居中对齐</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#vw与百分比" class="sidebar-link">vw与百分比</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#块级与行内元素" class="sidebar-link">块级与行内元素</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#如何让谷歌浏览器支持更小的字体" class="sidebar-link">如何让谷歌浏览器支持更小的字体</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#padding与margin" class="sidebar-link">padding与margin</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#浅拷贝与深拷贝" class="sidebar-link">浅拷贝与深拷贝</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#性能优化" class="sidebar-link">性能优化</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#如何实现简单的数据委托" class="sidebar-link">如何实现简单的数据委托</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#v-show与v-if" class="sidebar-link">v-show与v-if</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#vue进行实例挂载的时候经历了什么" class="sidebar-link">Vue进行实例挂载的时候经历了什么</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#v-if和v-for的优先级是什么" class="sidebar-link">v-if和v-for的优先级是什么？</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#为什么data要写成一个函数而不是对象" class="sidebar-link">为什么data要写成一个函数而不是对象</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#为什么vue2无法检测到手动添加的对象属性" class="sidebar-link">为什么Vue2无法检测到手动添加的对象属性</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#axios-js以及ts的请求封装" class="sidebar-link">Axios JS以及TS的请求封装</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#前端代理proxy" class="sidebar-link">前端代理Proxy</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#diff算法" class="sidebar-link">diff算法</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#vue解决首屏加载速度慢" class="sidebar-link">Vue解决首屏加载速度慢</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#vue底层收集data变化" class="sidebar-link">Vue底层收集data变化</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#vue是怎么收集依赖的" class="sidebar-link">Vue是怎么收集依赖的</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#vue-router与location-href的区别" class="sidebar-link">Vue-router与location.href的区别</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#vue3为什么要使用proxy重写数据劫持" class="sidebar-link">Vue3为什么要使用Proxy重写数据劫持</a></li><li class="sidebar-sub-header"><a href="/MylearnBlog/一些简单的面试题/面试相关js.html#vue中key的作用" class="sidebar-link">Vue中key的作用</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>小工具系列</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/MylearnBlog/小工具系列/如何搭建自己的图床笔记.html" class="sidebar-link">如何在笔记中添加自己的图床</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="call-bind-apply"><a href="#call-bind-apply" class="header-anchor">#</a> call bind apply</h2> <p>call接收的第一个参数就是新的this指向的东西 也就是重新绑定了原有对象的this指向让原有对象的this指向发生了改变，也就是new的对象里并没有相关的方法只是冒用了old对象的方法</p> <div class="language-js extra-class"><pre class="language-js"><code>eg：
+<span class="token keyword">const</span> oldobj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">&quot;oldobj&quot;</span><span class="token punctuation">,</span>
+    <span class="token function">say</span><span class="token punctuation">(</span><span class="token parameter">txt</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> newobj <span class="token operator">=</span> <span class="token punctuation">{</span>
+	<span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">&quot;new&quot;</span>
+<span class="token punctuation">}</span>
+mbs<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>newobj<span class="token punctuation">)</span>
+</code></pre></div><p>bind本身是一个方法 而且bind方法的返回值也是一个函数 比如 mbs.say.bind(newobj) 这个执行完后会返回一个函数也就是 需要一个东西去承接而不是主动执行 比如 const NewSay = mbs.say.bind(newobj)  NewSay()需要自己再去执行一次这个函数之后才能进行下一步</p> <h2 id="快速居中对齐"><a href="#快速居中对齐" class="header-anchor">#</a> 快速居中对齐</h2> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.class</span><span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span>relative<span class="token punctuation">,</span>
+    <span class="token property">left</span><span class="token punctuation">:</span>50%<span class="token punctuation">,</span>
+    <span class="token property">right</span><span class="token punctuation">:</span>50%<span class="token punctuation">,</span>
+	<span class="token property">transfrom</span><span class="token punctuation">:</span><span class="token function">tranlate</span><span class="token punctuation">(</span>-50%<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+//flex布局
+
+<span class="token property">display</span><span class="token punctuation">:</span>flex
+<span class="token property">margin</span><span class="token punctuation">:</span>auto
+</code></pre></div><h2 id="vw与百分比"><a href="#vw与百分比" class="header-anchor">#</a> vw与百分比</h2> <p>百分比单位针对的是父级下的百分比，也就是参照物是父级元素，都是父级元素的百分之多少，但是vw和px一样是一个固定的单位</p> <h2 id="块级与行内元素"><a href="#块级与行内元素" class="header-anchor">#</a> 块级与行内元素</h2> <p>块级元素自己就可以占据一行，但是行内元素就是行内占据多少就是多少长度</p> <h2 id="如何让谷歌浏览器支持更小的字体"><a href="#如何让谷歌浏览器支持更小的字体" class="header-anchor">#</a> 如何让谷歌浏览器支持更小的字体</h2> <p>通过tranfrom让字体自身进行缩放而不是一味的调节font-size</p> <h2 id="padding与margin"><a href="#padding与margin" class="header-anchor">#</a> padding与margin</h2> <p>都知道是内外边距，但是要知道padding针对的是元素自身，而margin针对的是元素外的东西。</p> <h2 id="浅拷贝与深拷贝"><a href="#浅拷贝与深拷贝" class="header-anchor">#</a> 浅拷贝与深拷贝</h2> <p>针对常规数据类型基本上不涉及到拷贝的概念，基本数据类型涉及的都是赋值而不是拷贝，拷贝针对的大多数都是引用数据类型</p> <h2 id="性能优化"><a href="#性能优化" class="header-anchor">#</a> 性能优化</h2> <p><img src="https://cdn.jsdelivr.net/gh/Nianchen/LearnImg/202210281919936.png" alt="image-20221027205846927"></p> <h2 id="如何实现简单的数据委托"><a href="#如何实现简单的数据委托" class="header-anchor">#</a> 如何实现简单的数据委托</h2> <p>避免简单单一的对某些dom元素重复进行事件绑定，将多个简单并列的事件在父级做一次代理，当这些事件发生时，父元素检测只要是属于自己子元素上发的事件都进行代处理，这种方法也解决了新加入的元素可能也需要重新绑定事件的过程。</p> <h2 id="v-show与v-if"><a href="#v-show与v-if" class="header-anchor">#</a> v-show与v-if</h2> <p>两者都可以在页面中控制元素是否显示但是两者的基本原理还是不同的
+v-show：直接操作 css ---&gt;display属性,让display值为none，dom元素本身还是存在的，只是不显示了
+v-if：直接不参与渲染流程，在dom树中根本就不添加这个元素，相比于v-show，v-if进行切换的时候的资源消耗更高，</p> <p>使用场景：</p> <p><code>v-if</code> 与 <code>v-show</code> 都能控制<code>dom</code>元素在页面的显示
+<code>v-if</code> 相比 <code>v-show</code> 开销更大的（直接操作<code>dom</code>节点增加与删除）
+如果需要非常频繁地切换，则使用 v-show 较好
+如果在运行时条件很少改变，则使用 v-if 较好</p> <h2 id="vue进行实例挂载的时候经历了什么"><a href="#vue进行实例挂载的时候经历了什么" class="header-anchor">#</a> Vue进行实例挂载的时候经历了什么</h2> <ul><li><code>new Vue</code>的时候调用会调用<code>_init</code>方法
+<ul><li>定义 <code>$set</code>、<code>$get</code> 、<code>$delete</code>、<code>$watch</code> 等方法</li> <li>定义 <code>$on</code>、<code>$off</code>、<code>$emit</code>、<code>$off</code>等事件</li> <li>定义 <code>_update</code>、<code>$forceUpdate</code>、<code>$destroy</code>生命周期</li></ul></li> <li>调用<code>$mount</code>进行页面的挂载</li> <li>挂载的时候主要是通过<code>mountComponent</code>方法</li> <li>定义<code>updateComponent</code>更新函数</li> <li>执行<code>render</code>生成虚拟<code>DOM</code></li> <li><code>_update</code>将虚拟<code>DOM</code>生成真实<code>DOM</code>结构，并且渲染到页面中</li></ul> <h2 id="v-if和v-for的优先级是什么"><a href="#v-if和v-for的优先级是什么" class="header-anchor">#</a> v-if和v-for的优先级是什么？</h2> <p>当两者作用于同一个标签元素的时候，通过观察生成的render函数可以知道，v-for的优先级大于v-if的优先级，也就是先进行列表元素的渲染，然后进行判断，会造成性能的浪费，最好把v-if放在区域渲染的地方，而不是多次的调用他</p> <h2 id="为什么data要写成一个函数而不是对象"><a href="#为什么data要写成一个函数而不是对象" class="header-anchor">#</a> 为什么data要写成一个函数而不是对象</h2> <p>防止在进行组件复用的时候，多次创建一个相同的组件对象后，多个data对象指向了同一个data地址，在comA中修改的数据会导致comB中数据同样发生改变。
+如果写成函数，函数不会产生数据污染的情况，如果你将其写成了一个对象，Vue底层的init初始化方法会将其封装成一个函数并向外抛出警告。</p> <h2 id="为什么vue2无法检测到手动添加的对象属性"><a href="#为什么vue2无法检测到手动添加的对象属性" class="header-anchor">#</a> 为什么Vue2无法检测到手动添加的对象属性</h2> <p>原因就出在Vue2的数据劫持原理，Vue2的数据劫持是利用definePrototype，这样的写法只能对Object身上的某个属性添加get set方法，但是直接对Object添加属性，不会走数据劫持的道路，也就不会通知收集依赖以及触发依赖，自然就不会引起页面的变化。但是Vue3使用的Proxy进行重写就可以监听到对象身上大部分的属性操作，进而触发依赖</p> <h2 id="axios-js以及ts的请求封装"><a href="#axios-js以及ts的请求封装" class="header-anchor">#</a> Axios JS以及TS的请求封装</h2> <div class="language-js extra-class"><pre class="language-js"><code>通过对vue axios请求的封装 减少后期维护代码的工作量
+而且可以施加拦截器对axios请求进行进一步分析  拦截对错误信息也可以进行进一步提示
+基本模板
+network<span class="token operator">/</span>request<span class="token punctuation">.</span>js
+<span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token parameter">config</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">const</span> instance <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">baseURL</span><span class="token operator">:</span><span class="token operator">/</span><span class="token comment">/////</span>
+        <span class="token literal-property property">timeout</span><span class="token operator">:</span><span class="token operator">/</span><span class="token comment">/////</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+    instance<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token parameter">config</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+		<span class="token keyword">return</span> config
+    <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token parameter">err</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+	<span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+     <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token function">instance</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>computed计算属性自身有缓存 多次同样的调用并不会多次调</p> <h2 id="前端代理proxy"><a href="#前端代理proxy" class="header-anchor">#</a> 前端代理Proxy</h2> <div class="language- extra-class"><pre class="language-text"><code>代理！**
+
+前端代理主要就是为了解决跨域问题 当然如果后端可以解决 当我没说.......  通过设置文件更改了请求的url 但是打包后可能会出现 空白页 url丢失的问题 这个时候需要对打包工具进行配置 或者进行进一步修改
+
+打包配置：修改路由模式 history-----&gt;hash 修改打包路径 避免资源找不到的问题  如果需要history模式 跟我没关系  扔给后端就完事了  让他自己重定向
+
+代理配置： 通过设置代理的环境变量 更改baseurl
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>路由！
+
+history模式与hash模式的区别  history会发送请求 而hash模式会携带参数进行url请求  前端自测使用history 打包要用hash
+
+SPA 指的是单页面应用 SEO优化就不好 当然性能可能会不好 因为多次路由导致来回切换 
+
+路由传值就是显示传值和隐shi传值
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>Vue源码
+
+Vue2双向绑定原理
+
+Vue2采取的原理本身叫做数据劫持，利用的是Object.defineProperty( )方法设置一个对象中的某个属性，当这个属性被调用的时候调用的就是get()操作 从而取得这个数据 或者是对这个数据进行二次加工 比如说给一个书名加上书名号这种简单操作 ，同样如果这个属性被修改那么就要进一步调用set函数 去进行修改后的操作 比如说Vue2本身是一个双向绑定的设计 调用set的同时要引起试图的改变
+
+1.实现一个监听器Observer，用来劫持并监听所有属性，如果有变动的，就通知订阅者。
+
+2.实现一个订阅者Watcher，可以收到属性的变化通知并执行相应的函数，从而更新视图。
+
+3.实现一个解析器Compile，可以扫描和解析每个节点的相关指令，并根据初始化模板数据以及初始化相应的订阅器。
+
+同样 vue的数据劫持也是通过 定义的setter 和getter 实现的如果 数据发生改变 就会监视到数据的变化然后引起识图的变化
+
+Vue的事件循环机制
+
+　**简单总结事件循环：**
+
+​		首先要知道浏览器以及js自身的事件循环机制 以及js运行顺序
+
+　　　同步代码执行 -&gt; 查找异步队列，推入执行栈，执行callback1[事件循环1] -&gt;查找异步队列，推入执行栈......
+
+　　即每个异步callback，最终都会形成自己独立的一个事件循环。
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>　
+Vue2的组件通信方式
+
+1. Props特点父传子 相当于父亲把数据当成参数向下传递但是儿子同样要声明并且接受这个参数
+
+2. $emit特点子传父 其实就是儿子用自己的数据调用了父亲的函数
+
+3. v-slot
+
+4. 组件的chileren和parent属性
+5. $ref直接拿属性
+
+6. 通过$attrs和 listeners
+7. 全局事件总线 eventBus
+8. Vuex stroe
+</code></pre></div><div class="language-vue extra-class"><pre class="language-vue"><code>vue2的生命周期都是成对出现的
+
+1.beforeCreat  在一个组件被创建出来以前对应的有一个creat 
+
+2.beforeMount 挂载之前对应的有mount
+
+3.beforeupdate  数据发生变化但是还没哟u更新到数据层和 update
+
+4.beforeDestory 和destoryed
+
+但是vue3中对生命周期的钩子做出了一定的修改 现在vue3只有六个生命周期
+
+1. onBeforeMount和moMount
+2. onBeforeupdate和update
+3. onBeforeunmount和onUnmount
+
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>回流与重绘 这就牵扯到浏览器工作原理了
+
+浏览器其实本身和js差不多 在识别html语句的时候 也会生成一个dom树 然后再进一步 解析css 样式  然后根据你自己写的布局 进行生成 布局 当然在这个过程中 不可见元素是不会被计算在内的 就是display：none的元素 但是当你使用定位以后 你的图层其实是分层的 这就导致 需要层叠的去生成元素  然后根据可视窗口进行光栅化渲染
+
+当然这个过程在第一次打开页面的时候是肯定会经理的 但是在你通过js或者响应式 更改了 布局以后这个过程就是重新走一遍 这就导致了 浏览器资源的消耗
+
+所以在日常的代码中 要减少这种资源的利用 也就是减少回流和重绘
+
+1.合并多次对dom元素的操作和修改 减少次数上的浪费
+
+2.如果dom修改的东西过多 可以通过更换类名 而不是依次更改
+
+3.让动起来的东西 脱离文档流 这样就不会重新生成dom树
+
+4.css3硬件加速（GPU加速）这是css3自带的属性 可以减少一部分的回流
+
+
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>for of 和 for in 的区别
+
+for in 遍历的是可迭代也就是可枚举类型 所以他适合用来遍历对象 而且 可能会遍历到一些原型 for of就更适合遍历数组
+
+而且在foreach 中  使用break 和return 并不会返回上层
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>箭头函数里面的this指向有问题而且不能使用argements对象来获取参数 而且也没有yield命令
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/Nianchen/LearnImg/202210312107750.png" alt="image-20220310205956227"></p> <p><img src="https://cdn.jsdelivr.net/gh/Nianchen/LearnImg/202210131936946.png" alt="image-20220310210148969"></p> <h2 id="diff算法"><a href="#diff算法" class="header-anchor">#</a> diff算法</h2> <p>dom数据化也就是虚拟dom把dom，避免重复修改dom，操作dom浪费浏览器性能 但是标签一定要打上key的唯一标识，要不然并不会进行相应的操作，至于为什么dom变成的数据格式问题，这是vue底层的原理也就是dom元素解析原理，这个在vue原理方面有解释</p> <div class="language- extra-class"><pre class="language-text"><code>Promise属于微任务在Promise体内 t 而定时器属于宏任务 这么一对比 Prmise的优先级大于定时器
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/Nianchen/LearnImg/202210312107583.png" alt="image-20220325222130056"></p> <h2 id="vue解决首屏加载速度慢"><a href="#vue解决首屏加载速度慢" class="header-anchor">#</a> Vue解决首屏加载速度慢</h2> <div class="language- extra-class"><pre class="language-text"><code>1.路由懒加载 避免 在不用的时候对其他的组件进行渲染
+2.ui库按需引入，不要直接引入所有的ui组件库
+3.静态资源 利用前端进行一些简单的存储避免重复请求资源
+4.避免组件重复打包，利用webpack的配置 如果重复使用的组件进行单独打包
+5.图片进行压缩保存，避免使用特别大的图片进行使用
+</code></pre></div><h2 id="vue底层收集data变化"><a href="#vue底层收集data变化" class="header-anchor">#</a> Vue底层收集data变化</h2> <p>在一个data的值发生变化的时候并不会立即执行重新渲染这个操作，而是内部维护了一个队列，将涉及的数据变更放入队列，然后统一执行，减少系统开销</p> <h2 id="vue是怎么收集依赖的"><a href="#vue是怎么收集依赖的" class="header-anchor">#</a> Vue是怎么收集依赖的</h2> <p>初始化组件实例对象的时候，会对data里的书记进行初始化，让其转换成响应式对象，在转换的过程中会收集依赖，其实主要是在Get的时候，Get的时候，Get证明了你对这个数据有引用，一旦更改就需要通知到所有引用他的地方，而一旦触发了get就意味着你已经用了这个数据，所以在get中手机依赖是最合适的</p> <p>而依赖Dep是一个class内部维护了一个Map进行存储每个变量对应的依赖，其实应该是weakmap于map相比weakmap会在原来对象被设置为null的时候进行内存回收，而不会想Map一样不被内存回收</p> <h2 id="vue-router与location-href的区别"><a href="#vue-router与location-href的区别" class="header-anchor">#</a> Vue-router与location.href的区别</h2> <p>使用router是静态跳转其实页面并没有跳转，location不仅跳转页面而且刷新页面</p> <h2 id="vue3为什么要使用proxy重写数据劫持"><a href="#vue3为什么要使用proxy重写数据劫持" class="header-anchor">#</a> Vue3为什么要使用Proxy重写数据劫持</h2> <p>1.支持的复杂数据类型更多比如Map Set
+2.对某些对象数据新属性的添加也可以检测的到，不再需要通过Vue.set进行
+3.全方位的数组变化检测</p> <h2 id="vue中key的作用"><a href="#vue中key的作用" class="header-anchor">#</a> Vue中key的作用</h2> <p>Vue内部维护的有一个 虚拟Dom对比算法 再进行更新页面的时候 会将新产生的虚拟Dom于原来的虚拟Dom进行对比 将两次不同Dom的地方进行替换 将相同的地方保持不变 进一步在生成真实Dom的时候 减少浏览器渲染负荷  但是如果一旦在 使用key不当的情况下 虚拟Dom 可以误认为 两个不同的 标签 是一个标签 进行替换操作 而不是重新生成 导致 进一步的错误 所以 在 代码中key的存在 尽量保持唯一性 而且 和标签中的 属性 最好一致且唯一</p> <p><img src="https://cdn.jsdelivr.net/gh/Nianchen/LearnImg/202210131844226.png" alt="image-20211005165958901"></p> <p>v-for中使用key可以在diff的时候对未更改数据进行更快的复用，也就是跟踪元素.
+·更准确:因为带 key就不是就地复用了，在sameNode函数a.key=== b.key对比中可以
+避免就地复用的情况。所以会更加准确。
+·更快速:利用key的唯一性生成map对象来获取对应节点，比遍历方式更快
+且在v-for中如果使用index作为key其实用处不大只是为了不报错，因为数组不管如何变化下标永远都是从0开始，会让diff进行更多的检测</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/MylearnBlog/计算机网络入门/计算机网络.html" class="prev">
+        计算机网络入门
+      </a></span> <span class="next"><a href="/MylearnBlog/小工具系列/如何搭建自己的图床笔记.html">
+        如何在笔记中添加自己的图床
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/MylearnBlog/assets/js/app.1629bc63.js" defer></script><script src="/MylearnBlog/assets/js/2.f721d287.js" defer></script><script src="/MylearnBlog/assets/js/14.a152939e.js" defer></script>
+  </body>
+</html>
